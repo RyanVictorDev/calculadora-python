@@ -122,7 +122,7 @@ def calc_divisao():
             print(f"Aqui o resultado antes do erro: {divisao}\n")
             calc_divisao()    
 
-    print(f"Resultado final: {divisao}")
+    print(f"Resultado final: {divisaoo}")
     calculadora()
 
 calculadora()
