@@ -125,6 +125,4 @@ def calc_divisao():
     print(f"Resultado final: {divisao}")
     calculadora()
 
-aaaaa
-
 calculadora()
