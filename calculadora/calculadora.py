@@ -12,7 +12,7 @@ def comparar(decisao, opcoes):
 # criando a função de chamada da calculadora
 def calculadora():
     # lista de opções
-    opcoes = ["soma", "subtracao", "multiplicacao", "divisao"]
+    opcoes = ["soma", "subtração", "multiplicação", "divisão", "potenciação"]
 
     print("Bem-vindo(a) a calculadora! o que deseja?\n - Soma?\n - Subtração?\n - Multiplicação?\n - Divisão?")
 
@@ -30,14 +30,17 @@ def calculadora():
         case "soma":
             calc_soma()
         
-        case "subtracao":
+        case "subtração":
             calc_subtracao()
 
-        case "multiplicacao":
+        case "multiplicação":
             calc_multiplicacao()
 
-        case "divisao":
+        case "divisão":
             calc_divisao()
+
+        # case "potenciação":
+        #     calc_potenciacao()
 
         case _:
             print("Desculpas, houve um erro..")
@@ -46,13 +49,14 @@ def calculadora():
     
 # criando a função de soma
 def calc_soma():
-    numeros = 0
-    soma = 0
+    parcela_01 = 0
+    parcela_02 = 0
     print("caso deseje cancelar ou finalizar, digite '0.001'\n")
-    while numeros != 0.001:
+    while parcela_01 != 0.001 or parcela_02 != 0.001:
         try:
-            numeros = float(input("Adicione o numero que quer somar.\n"))
-            soma = soma + numeros
+            parcela_01 = float(input("Adicione o numero que quer somar.\n"))
+            soma = parcela_01 + parcela_02
+            parcela_02 = soma
             print(f"Resultado: {soma}\n")
         
         except ValueError:
@@ -65,13 +69,13 @@ def calc_soma():
 
 # criando a função de subtração
 def calc_subtracao():
-    numeros = 0
+    minuendo = 0
     print("caso deseje cancelar ou finalizar, digite '0.001'\n")
-    while numeros != 0.001:
+    while minuendo != 0.001 or subtraendo != 0.001:
         try:
-            subtracao = float(input("Adicione o primeiro número que quer subtrair. \n"))
-            numeros = float(input("Adicione o numero que quer subtrair.\n"))
-            subtracao = subtracao - numeros
+            subtraendo = float(input("Adicione o primeiro número que quer subtrair. \n"))
+            minuendo = float(input("Adicione o numero que quer subtrair.\n"))
+            subtracao = subtraendo - minuendo
             print(f"Resultado: {subtracao}\n")
 
         except ValueError:
@@ -79,50 +83,71 @@ def calc_subtracao():
             print(f"Aqui o resultado antes do erro: {subtracao}\n")
             calc_subtracao()
 
-    print(f"Resultado final: {subtracao}")
+    print(f"Resultado final: {subtraendo}")
     calculadora()
 
 # criando a função de multiplicação
 def calc_multiplicacao():
-    numeros = 0
+    fator_01 = 0
     print("caso deseje cancelar ou finalizar, digite '0.001'\n")
-    while numeros != 0.001:
+    while fator_01 != 0.001 or fator_02 != 0.001:
         try:
-            multiplicacao = float(input("Adicione o primeiro número que deseja multiplicar.\n"))
-            numeros = float(input("Adicione o número que deseja multiplicar.\n"))
-            multiplicacao = multiplicacao * numeros
-            print(f"Resultado: {multiplicacao}\n")
+            fator_01 = float(input("Adicione o primeiro fator:\n"))
+            fator_02 = float(input("Adicione o segundo fator:\n"))
+            produto = fator_01 * fator_02
+            print(f"Resultado: {produto}\n")
 
         except ValueError:
             print("Desculpe, houve um erro. Tente novamente")
-            print(f"Aqui o resultado antes do erro: {multiplicacao}\n")
+            print(f"Aqui o resultado antes do erro: {produto}\n")
             calc_multiplicacao()
 
-    print(f"Resultado final: {multiplicacao}")
+    print(f"Resultado final: {produto}")
     calculadora()
 
 # criando a função de divisão
 def calc_divisao():
-    numeros = 0
+    dividendo = 0
     print("caso deseje cancelar ou finalizar, digite '0.001'\n")
-    while numeros != 0.001:
+    while dividendo != 0.001 or divisor != 0.001:
         try:
-            divisao = float(input("Adicione o primeiro número que deseja dividir.\n"))
-            numeros = float(input("Adicione o número que deseja dividir.\n"))
-            divisao = divisao / numeros
+            print("="*25)
+            dividendo = float(input("Adicione o dividendo:\n"))
+            divisor = float(input("Adicione o divisor:\n"))
+            divisao = dividendo / divisor
             print(f"Resultado: {divisao}\n")
+            print("="*25)
 
         except ValueError:
+            print("="*25)
             print("Desculpe, houve um erro. Tente novamente")
             print(f"Aqui o resultado antes do erro: {divisao}")
+            print("="*25)
+
             calc_divisao()
 
         except ZeroDivisionError:
+            print("="*25)
             print("Desculpe, houve um erro. Tente novamente")
             print(f"Aqui o resultado antes do erro: {divisao}\n")
-            calc_divisao()    
+            print("="*25)
 
+            calc_divisao()
+    
+    print("="*25)
     print(f"Resultado final: {divisao}")
+    print("="*25)
     calculadora()
+
+
+
+# criando a função de potenciação
+# def calc_potenciacao():
+#     print("caso deseje cancelar ou finalizar, digite '0.001'\n")
+#     while numeros != 0.001 or potencia != 0.001:
+#         try:
+#             potencia = float(input("Adicione o número que será potenciado:\n"))
+            
+
 
 calculadora()
